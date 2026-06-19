@@ -223,13 +223,6 @@ nav a svg { flex-shrink: 0; }
 }
 .reminder-del:hover { opacity: 1; }
 
-.content-section {
-  display: none;
-}
-.content-section.active {
-  display: block;
-}
-
 .profile {
   text-align: center;
   padding: 32px 0 24px;

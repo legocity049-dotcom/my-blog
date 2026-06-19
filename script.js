@@ -18,25 +18,6 @@
     save('blog-theme', theme);
   });
 
-  const navLinks = document.querySelectorAll('#mainNav a');
-  const sections = document.querySelectorAll('.content-section');
-
-  function switchSection(id) {
-    sections.forEach(function(s) { s.classList.remove('active'); });
-    var target = document.getElementById('section-' + id);
-    if (target) target.classList.add('active');
-    navLinks.forEach(function(a) { a.classList.remove('active'); });
-    var activeLink = document.querySelector('#mainNav a[data-section="' + id + '"]');
-    if (activeLink) activeLink.classList.add('active');
-  }
-
-  navLinks.forEach(function(a) {
-    a.addEventListener('click', function(e) {
-      e.preventDefault();
-      switchSection(this.getAttribute('data-section'));
-    });
-  });
-
   var defaultNews = [
     { date: '18.06.2026', title: 'Обновил дизайн блога' },
     { date: '15.06.2026', title: 'Новый арт в портфолио' },
