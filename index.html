@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кленов Степан — Личный блог</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    Кленов Степан
+  </div>
+  <nav id="mainNav">
+    <a class="active" data-section="home">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Главная
+    </a>
+    <a data-section="notes">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+      Заметки
+    </a>
+    <a data-section="plans">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Планы
+    </a>
+    <a data-section="hobbies">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Хобби
+    </a>
+    <a data-section="ultrakill">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      Ultrakill
+    </a>
+  </nav>
+  <div class="header-actions">
+    <button class="theme-btn" id="themeToggle" title="Сменить тему">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+    <button class="modal-btn" id="openModalBtn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+      Сообщение
+    </button>
+  </div>
+</header>
+
+<div class="layout">
+
+  <aside class="col-left">
+    <div class="card" id="newsCard">
+      <h3>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        Новости
+      </h3>
+      <div id="newsList"></div>
+    </div>
+  </aside>
+
+  <main class="col-center">
+
+    <div class="content-section active" id="section-home">
+      <div class="card">
+        <div class="profile">
+          <div class="avatar">СК</div>
+          <h1>Степан Кленов</h1>
+          <p class="tagline">Художник, программист, геймер</p>
+        </div>
+        <p contenteditable="true" data-key="bio-text" style="text-align:center;color:var(--text2);font-size:14px;max-width:500px;margin:0 auto;">
+          Привет! Я Степан, увлекаюсь рисованием, веб-разработкой и видеоиграми. Этот блог — моё личное пространство, где я делюсь заметками, планами и мыслями.
+        </p>
+        <div class="bio-cards">
+          <div class="bio-card">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+            <h4>Рисование</h4>
+            <p>Цифровые иллюстрации, скетчи, персонажи</p>
+          </div>
+          <div class="bio-card">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <h4>Программирование</h4>
+            <p>HTML, CSS, JavaScript, пет-проекты</p>
+          </div>
+          <div class="bio-card">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4"/><path d="M14 12h4"/><path d="M10 12h4"/></svg>
+            <h4>Гейминг</h4>
+            <p>Ultrakill, инди-игры, шутеры</p>
+          </div>
+          <div class="bio-card">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <h4>Ultrakill</h4>
+            <p>Моя любимая игра — скоростной экшен</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-notes">
+      <div class="card">
+        <div class="section-header">
+          <h2>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            Мои заметки
+          </h2>
+        </div>
+        <div class="note-form">
+          <input type="text" id="noteInput" placeholder="Напишите заметку..." maxlength="200">
+          <button id="addNoteBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Добавить
+          </button>
+        </div>
+        <div class="note-list" id="noteList"></div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-plans">
+      <div class="card">
+        <div class="section-header">
+          <h2>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Мои планы
+          </h2>
+        </div>
+        <div class="plan-form">
+          <input type="text" id="planInput" placeholder="Новая цель..." maxlength="200">
+          <button id="addPlanBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Добавить
+          </button>
+        </div>
+        <div class="plan-list" id="planList"></div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-hobbies">
+      <div class="card">
+        <div class="section-header">
+          <h2>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Мои хобби
+          </h2>
+        </div>
+
+        <div class="hobby-card">
+          <h3>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+            Рисование
+          </h3>
+          <p contenteditable="true" data-key="hobby-drawing">Я увлекаюсь цифровым рисованием уже несколько лет. Работаю в Clip Studio Paint и Procreate, люблю рисовать персонажей и фэнтезийные пейзажи. В последнее время экспериментирую со стилизованными портретами и low-poly графикой. Мечтаю когда-нибудь собрать свой артбук.</p>
+        </div>
+
+        <div class="hobby-card">
+          <h3>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            Программирование
+          </h3>
+          <p contenteditable="true" data-key="hobby-coding">Программирование — моя основная профессиональная деятельность. Пишу на JavaScript и TypeScript, увлекаюсь фронтендом и созданием интерактивных интерфейсов. В свободное время делаю небольшие пет-проекты: от генераторов артов до простых игр на канвасе.</p>
+        </div>
+
+        <div class="hobby-card">
+          <h3>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4"/><path d="M14 12h4"/><path d="M10 12h4"/></svg>
+            Гейминг
+          </h3>
+          <p contenteditable="true" data-key="hobby-gaming">Видеоигры — моя давняя страсть. Предпочитаю динамичные игры с высоким темпом и deep mechanics. Люблю инди-проекты за их оригинальность, но и в ААА-тайтлы играю с удовольствием. Моя любимая игра — Ultrakill, которая сочетает в себе всё, что я ценю в играх.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-ultrakill">
+      <div class="card">
+        <div class="game-header">
+          <h2>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            ULTRAKILL
+          </h2>
+          <p class="sub">«Машина. Я промолчу, но ты поймёшь.»</p>
+        </div>
+
+        <div class="game-section">
+          <h3>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Об игре
+          </h3>
+          <p contenteditable="true" data-key="uk-intro">Ultrakill — это скоростной ретро-шутер от первого лица, разработанный Hakita и изданный New Blood Interactive. Вдохновлённый такими классиками, как Quake и Doom Eternal, Ultrakill предлагает уникальную механику, основанную на стиле и непрерывном движении. Игрок управляет V1 — роботом-войной, который сражается с ордами машин и демонов в аду.</p>
+          <p contenteditable="true" data-key="uk-intro2">Главная особенность геймплея — система «крови»: враги пачкают пол кровью, и V1 может восстанавливать здоровье, собирая её. Это заставляет игрока постоянно находиться в гуще событий, агрессивно атаковать и уворачиваться, что создаёт уникальный темп игры.</p>
+        </div>
+
+        <div class="game-section">
+          <h3>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Механики
+          </h3>
+          <p contenteditable="true" data-key="uk-mechanics">В основе Ultrakill лежит система оценки стиля: каждое убийство, уклонение и трюк начисляют очки, множитель растёт, и чем выше стиль — тем больше награда. Механика паррирования позволяет отбивать вражеские снаряды обратно, что добавляет глубины сражениям. Огромный арсенал оружия — от револьвера и дробовика до ракетницы и напалма — можно комбинировать для максимально зрелищных комбо. Самостоятельные руки-захваты, скольжение по стенам и рывки делают перемещение невероятно плавным.</p>
+        </div>
+
+        <div class="game-section">
+          <h3>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            Сюжет и Лор
+          </h3>
+          <p contenteditable="true" data-key="uk-lore1">Действие Ultrakill разворачивается в далёком будущем, после того как человечество полностью вымерло, но созданные им машины продолжают существовать. Главный герой — V1, одна из боевых машин, спустившаяся в ад в поисках крови, необходимой для поддержания своей энергии. Ад населён не только демонами, но и другими машинами — такими же, как V1, каждая из которых преследует свои цели.</p>
+          <p contenteditable="true" data-key="uk-lore2">Исследуя круги ада — от Поверхности до самых глубин Преисподней — V1 сталкивается с существами, основанными на «Божественной комедии» Данте Алигьери. Каждый круг ада представляет собой уникальную экосистему: Лимб, Похоть, Чревоугодие, Жадность, Гнев, Ересь, Насилие, Мошенничество и Предательство. По мере продвижения раскрываются тайны падения человечества, природы самих машин и истинная причина, по которой V1 оказался в аду.</p>
+          <p contenteditable="true" data-key="uk-lore3">Враги в игре — не просто абстрактные демоны, а падшие души грешников и боевые машины, каждая со своим дизайном и поведением. От медлительных Corpse of King Minos до стремительных Mindflayers — каждый противник требует индивидуального подхода. Лор подаётся через окружение, записки и фрагментарные диалоги с боссами, оставляя простор для интерпретации. Сочетание отсылок к античной и христианской мифологии с киберпанк-эстетикой создаёт уникальную, мрачную и одновременно ироничную атмосферу, которая и сделала Ultrakill культовой игрой.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <aside class="col-right">
+    <div class="card" id="remindersCard">
+      <h3>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        Напоминания
+      </h3>
+      <div id="reminderList"></div>
+      <div style="margin-top:10px;">
+        <button class="modal-btn" style="width:100%;justify-content:center;" id="addReminderBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Добавить
+        </button>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <h2>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+      Оставить сообщение
+    </h2>
+    <div class="field">
+      <label>Ваше имя</label>
+      <input type="text" id="modalName" placeholder="Имя" maxlength="50">
+    </div>
+    <div class="field">
+      <label>Сообщение</label>
+      <textarea id="modalMsg" placeholder="Текст сообщения..." maxlength="500"></textarea>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-secondary" id="modalCancel">Отмена</button>
+      <button class="btn-primary" id="modalSend">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        Отправить
+      </button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2026 Кленов Степан Андреевич. Личный блог.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
